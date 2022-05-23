@@ -1,4 +1,5 @@
 import { Route } from '.';
+import { BodyReplaceOptions } from './middlewares/response';
 import { UpstreamOptions } from './middlewares/upstream';
 
 export interface Context {
@@ -7,6 +8,7 @@ export interface Context {
   request: Request;
   response: Response;
   upstream: UpstreamOptions | null;
+  bodyReplace?: BodyReplaceOptions[];
 }
 
 export type Middleware = (

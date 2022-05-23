@@ -4,6 +4,7 @@ import {
   HeadersOptions,
   LoadBalancingOptions,
   UpstreamOptions,
+  BodyReplaceOptions,
 } from './middlewares';
 
 export interface Route {
@@ -14,6 +15,7 @@ export interface Route {
   headers?: HeadersOptions;
   methods?: string[],
   loadBalancing?: LoadBalancingOptions,
+  bodyReplace?: BodyReplaceOptions[],
 }
 
 export type RouteList = Route[];

@@ -4,6 +4,7 @@ import {
   useHeaders,
   useLoadBalancing,
   useUpstream,
+  useResponse,
 } from './middlewares';
 import { WorkersKV } from './database';
 import { usePipeline } from './middleware';
@@ -59,6 +60,7 @@ const useReflare = async (
     useHeaders,
     useCORS,
     useUpstream,
+    useResponse,
   );
 
   const routeList: RouteList = [];
@@ -91,6 +93,7 @@ const useReflare = async (
       hostname: getHostname(request),
       response: new Response('Unhandled response'),
       upstream: null,
+      bodyReplace: route.bodyReplace,
     };
 
     try {
